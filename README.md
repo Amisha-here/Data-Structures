@@ -1,7 +1,7 @@
 # DATA STRUCTURES
 Organising data in an organised way in computer to use them effectively is known as `Data Structures`.
 An organised date can be used to implement various operations effectively.
-Some of them are `Traversing`,`Sortin`,`Searching` etc.
+Some of them are `Traversing`,`Sorting`,`Searching` etc.
 
 ## Types of Data Structure:
 1. Array

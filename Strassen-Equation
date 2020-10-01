@@ -1,0 +1,55 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int mat[2][2],mat1[2][2];
+    map<char,int> mp;
+    char c='a';
+    cout<<"ENTER THE FIRST 2 x 2 MATRIX  A\n";
+
+    for(int i=0;i<2;i++ )
+        for(int j=0;j<2;j++)
+            {cin>>mat[i][j];
+            mp[c]=mat[i][j];
+            c++;
+            }
+
+    cout<<"ENTER THE SECOND 2 x 2 MATRIX  B\n";
+
+    for(int i=0;i<2;i++ )
+    for(int j=0;j<2;j++)
+    {  cin>>mat1[i][j];
+        mp[c]=mat1[i][j];
+        c++;
+    }
+
+    int p1,p2,p3,p4,p5,p6,p7;
+
+    p1=mp['a']*(mp['f']-mp['h']);
+    p2=(mp['a']+mp['b'])*mp['h'];
+    p3=(mp['c']+mp['d'])*mp['e'];
+    p4=mp['d']*(mp['g']-mp['e']);
+    p5=(mp['a']+mp['d'])*(mp['e']+mp['h']);
+    p6=(mp['b']-mp['d'])*(mp['g']+mp['h']);
+    p7=(mp['a']-mp['c'])*(mp['e']+mp['f']);
+
+    int resmat[2][2];
+
+    resmat[0][0]=p5+p4-p2+p6;
+    resmat[0][1]=p1+p2;
+    resmat[1][0]=p3+p4;
+    resmat[1][1]=p1+p5-p3-p7;
+
+    cout<<"THE RESULTANT MATRIX   A X B   IS\n";
+
+    for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<2;j++)
+        cout<<resmat[i][j]<<" ";
+        cout<<endl;
+    }
+
+    return 0;
+
+    }

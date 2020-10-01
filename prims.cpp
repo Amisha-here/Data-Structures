@@ -1,4 +1,4 @@
-//Prims algorithm class C++
+//Prims algorithm in C++
 class Prim {
            int N;
            vector<vector<pair<int, int> > > E;

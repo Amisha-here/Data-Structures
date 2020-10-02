@@ -1,0 +1,46 @@
+#include  <iostream> 
+using namespace std; 
+  
+// function to sort array using shellSort 
+int shellSort(int arr[], int n) { 
+    // Start with a considerable gap, then reduce the gap 
+    for (int interval = n/2; interval > 0; interval /= 2) { 
+        // Do a gapped insertion sort for this gap size. 
+       
+        for (int i = interval; i < n; i += 1) { 
+
+            int temp = arr[i]; 
+            
+            int j;             
+            for (j = i; j >= interval && arr[j - interval] > temp; j -= interval) 
+                arr[j] = arr[j - interval]; 
+              
+            //  put temp (the original a[i]) in its correct location 
+            arr[j] = temp; 
+        } 
+    } 
+    return 0; 
+} 
+  
+void printArray(int arr[], int n) { 
+    for (int i=0; i<n; i++) 
+        cout << arr[i] << " "; 
+} 
+  
+int main() { 
+    int n;
+    int arr[1000];
+    for(int i=0;i<n;i++){
+    cin>>arr[i];
+    }
+  
+    cout << "Array before"<<endl; 
+    printArray(arr, n); 
+  
+    shellSort(arr, n); 
+  
+    cout << "Array after :"<<endl; 
+    printArray(arr, n); 
+  
+    return 0; 
+} 

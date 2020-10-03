@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+struct knap{
+    //int v,w;
+    double v,w,vw;
+};
+
+bool comp(knap k1, knap k2){
+    return (k1.vw<k2.vw);
+}
+
+int main()
+{
+	int t;
+    scanf("%d",&t);
+    while(t--){
+        int n ;
+        double weight;
+        cin >> n >> weight;
+        knap arr[n];
+        for(int i=0;i<n;i++) {
+            cin >> arr[i].v >> arr[i].w;
+            arr[i].vw=arr[i].v/arr[i].w;
+        }
+        double val=0.0;
+        sort(arr,arr+n,comp);
+        //for(int i=n-1;i>=0;i--) cout << arr[i].v << " " << arr[i].w<< " ";
+        for(int i=n-1;i>=0 && weight>0;i--){
+            if(arr[i].w<=weight){
+                val += arr[i].v;
+                weight -= arr[i].w;
+                //cout << "   " << val << endl; 
+            }
+            else{
+                val+=arr[i].v*(double)((double)weight/arr[i].w);
+                weight=0;
+                //cout << "   " << val << endl; 
+                break;
+            }
+        }
+        printf("%.2f\n",val);
+        //cout << setprecision(2) << val << endl;
+    }
+	return 0;
+}

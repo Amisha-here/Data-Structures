@@ -1,0 +1,64 @@
+//We are given an array containg n numbers. All the numbers are present thrice except for one number which is only present once. Find the unique number. Only use - bitwise operators, and no extra space.
+//
+//Input Format
+//First line contains the number n. Second line contains n space separated number.
+//
+//Constraints
+//N < 10^5
+//
+//Output Format
+//Output a single line containing the unique number
+//
+//Sample Input
+//7
+//1 1 1 2 2 2 3
+//Sample Output
+//3
+//Explanation
+//3 is present only once
+
+
+
+
+#include<iostream>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+int Count_Bits(int N)
+{
+	int C;
+	C=0;
+	while(N>0)
+	{
+		++C;
+		N=N>>1;
+	}
+	return C;
+}
+int main() {
+	int T,M,X,Y,Z,i;
+	cin>>T;
+	int A[T];
+	M=0;
+	for(i=0;i<T;i++)
+	{
+		cin>>A[i];
+		M=max(M,A[i]);
+	}
+	M=Count_Bits(M);
+	X=1;
+	Y=0;
+	while(M--)
+	{
+	Z=0;	
+	for(i=0;i<T;i++)
+	{
+        if(X&A[i])
+		++Z;
+	}
+	Y=Y+(Z%3)*X;
+	X=X<<1;
+	}
+	cout<<Y<<endl;
+	return 0;
+}

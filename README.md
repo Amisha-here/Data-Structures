@@ -25,7 +25,7 @@ To earn your Hacktoberfest tee or tree reward, you must register and make four v
 ## Rules To Contribute To This Repo
 
 -   Use any language.
--   C, C++, JAVA, Data Structure and Algorithms, HTML, CSS, Android Projects.
+-   C, C++, JAVA, Data Structure and Algorithms.
 -   Anything valuable.
 
 ## Steps For Contribution
